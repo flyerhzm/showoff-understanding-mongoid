@@ -34,8 +34,6 @@
 
 !SLIDE center
 
-# Compare with ActiveRecord #
-
 ![Compare with ActiveRecord](comparison.png)
 
 !SLIDE
