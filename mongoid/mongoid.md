@@ -51,3 +51,39 @@
             :type => Float, 
             :default => 0.0
     end
+
+!SLIDE
+include
+  ActiveModel
+    Conversion
+    Naming
+    Serialization
+    MassAssignmentSecurity
+    Serializers::JSON
+    Serializers::Xml
+  Mongoid
+    Associations
+    Atomicity
+    Attributes
+    Collections
+    Dirty
+    Extras
+    Fields
+    Hierarchy
+    Indexes
+    JSON
+    Keys
+    Matchers
+    Memoization
+    Modifiers
+    MultiParameterAttributes
+    Paths
+    Persistence
+    Safety
+    Validations
+extend
+  ActiveModel
+    Translation
+  Mongoid
+    Finders
+    NamedScope
