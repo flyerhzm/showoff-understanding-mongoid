@@ -8,3 +8,9 @@ body, #preso, .slide, #footer {
 a {
   color: white;
 }
+ul.float {
+  overflow: hidden;
+}
+ul.float li {
+  float: left;
+}

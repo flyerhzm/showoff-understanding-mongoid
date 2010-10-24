@@ -1,1 +1,11 @@
-{ "name": "Understanding Mongoid", "sections": [ {"section":"mongoid"} ]}
+{ "name": "Understanding Mongoid", "sections": [
+  { "section":"home" },
+  { "section":"me" },
+  { "section":"document" },
+  { "section":"fields" },
+  { "section":"attributes" },
+  { "section":"mass_assignment_security" },
+  { "section":"associations" },
+  { "section":"persistence" },
+  { "section":"querying" }
+]}
