@@ -9,5 +9,6 @@
   { "section":"persistence" },
   { "section":"querying" },
   { "section":"callbacks" },
-  { "section":"validations" }
+  { "section":"validations" },
+  { "section":"references" }
 ]}
