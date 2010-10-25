@@ -2,6 +2,8 @@
 
 # Mass Assignment Security #
 
+## Inherited from ActiveModel ##
+
 !SLIDE
 
     @@@Ruby

@@ -7,5 +7,7 @@
   { "section":"mass_assignment_security" },
   { "section":"associations" },
   { "section":"persistence" },
-  { "section":"querying" }
+  { "section":"querying" },
+  { "section":"callbacks" },
+  { "section":"validations" }
 ]}

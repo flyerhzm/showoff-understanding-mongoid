@@ -66,7 +66,7 @@
 
 # Criteria #
 
-* core for finders
+* translate
 * lazy finders
 * chainable scope
 
@@ -76,42 +76,54 @@
 
 !SLIDE
 
+# translate #
+
+!SLIDE
+
 Person.find(:all, :conditions => { :name => "Syd" })
 
 selector: { :name => "Syd" }
-options: nil
+options: {}
 
 !SLIDE
 
 Person.any_in(:status => ["Single", "Divorced", "Separated"])
 
 selector: {:status=>{"$in"=>["Single", "Divorced", "Separated"]}}
-options: nil
+options: {}
 
 !SLIDE
 
 Person.any_of({:status => "Single"}, {:preference => "Open"})
 
 selector: {"$or"=>[{:status=>"Single"}, {:preference=>"Open"}]}
-options: nil
+options: {}
 
 !SLIDE
 
 Person.desc(:last_name).asc(:first_name)
 
-selector: nil
+selector: {}
 options: {:sort=>[[:last_name, :desc], [:first_name, :desc]]}
 
 !SLIDE
 
 Person.limit(20).skip(100)
 
-selector: nil
+selector: {}
 options: {:limit=>20, :skip=> 100}
 
 !SLIDE
 
 Person.where(:age.gt => 18, :age.lt => 30)
 
-selector: nil
+selector: {}
 options: { :age => [{"$gt" => 18}, { "$lt" => 30 }] }
+
+!SLIDE
+
+# lazy finders #
+
+!SLIDE
+
+# chainable scope #
