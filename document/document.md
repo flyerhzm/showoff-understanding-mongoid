@@ -14,6 +14,12 @@
 
 ![Compare with ActiveRecord](comparison.png)
 
+!SLIDE center
+
+# Overview #
+
+![Overview](overview.png)
+
 !SLIDE
 
 # Document #
@@ -31,37 +37,7 @@
     end
 
 !SLIDE
-include
-  ActiveModel
-    Conversion
-    Naming
-    Serialization
-    MassAssignmentSecurity
-    Serializers::JSON
-    Serializers::Xml
-  Mongoid
-    Associations
-    Atomicity
-    Attributes
-    Collections
-    Dirty
-    Extras
-    Fields
-    Hierarchy
-    Indexes
-    JSON
-    Keys
-    Matchers
-    Memoization
-    Modifiers
-    MultiParameterAttributes
-    Paths
-    Persistence
-    Safety
-    Validations
-extend
-  ActiveModel
-    Translation
-  Mongoid
-    Finders
-    NamedScope
+
+## include Mongoid::Document means ##
+
+## You get the CRUD ability to Mongodb ##
