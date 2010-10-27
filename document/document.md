@@ -20,7 +20,7 @@
 
 ![Overview](overview.png)
 
-!SLIDE
+!SLIDE smaller
 
 # Document #
 
@@ -31,9 +31,7 @@
       field :middle_initial
       field :last_name
       field :birthday, :type => Date
-      field :blood_alcohol_level,
-            :type => Float, 
-            :default => 0.0
+      field :live, :type => Boolean, :default => 0.0
     end
 
 !SLIDE

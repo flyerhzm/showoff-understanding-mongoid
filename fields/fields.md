@@ -2,60 +2,50 @@
 
 # Fields #
 
-!SLIDE
+!SLIDE center
 
 ![Fields](fields.png)
 
 !SLIDE
 
-# Getter method #
+# field #
+
+    @@@Ruby
+    class Person
+      include Mongoid::Document
+      field :first_name
+      field :last_name
+    end
+
+## field attribute means ##
+## the ability of getter, setter and query attribute ##
+
+!SLIDE
 
     @@@ Ruby
     person.first_name
     person.last_name
 
-!SLIDE
-
-# Getter method #
-
-    @@@ Ruby
-    define_method(meth) {
-      read_attribute(name)
-    }
-
-!SLIDE
-
-# Setter method #
-
-    @@@ Ruby
     person.first_name = "Richard"
     person.last_name = "Huang"
 
-!SLIDE
+    person.first_name?
+    person.last_name?
 
-# Setter method #
+!SLIDE small
 
-    @@@ Ruby
+# Implementation #
+
+    @@@Ruby
+    define_method(meth) { read_attribute(name) }
+
     define_method("#{meth}=") { |value|
       write_attribute(name, value)
     }
 
-!SLIDE
-
-# Query method #
-
-    @@@ Ruby
-    person.first_name?
-    person.last_name?
-
-!SLIDE
-
-# Query method #
-
-    @@@ Ruby
     define_method("#{meth}?") do
       attr = read_attribute(name)
-      (options[:type] == Boolean) ? 
+      (options[:type] == Boolean) ?
         attr == true : 
         attr.present?
     end

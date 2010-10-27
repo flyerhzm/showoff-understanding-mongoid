@@ -6,7 +6,7 @@
 
 ![Associations](associations.png)
 
-!SLIDE small
+!SLIDE smaller
 
     @@@Ruby
     class Person
@@ -14,10 +14,12 @@
       embeds_one :address
       embeds_many :phones
     end
+
     class Address
       include Mongoid::Document
       embedded_in :person, :inverse_of => :address
     end
+
     class Phone
       include Mongoid::Document
       embedded_in :person, :inverse_of => :phones
@@ -36,6 +38,8 @@
 ![Phone Associations](phone_associations.png)
 
 !SLIDE smaller
+
+# Implementation #
 
     @@@Ruby
     define_method(assoication_name) do
@@ -65,7 +69,7 @@
     person.build_address(:street => "Oxford Street")
     person.create_address(:street => "Oxford Street")
 
-!SLIDE
+!SLIDE smallest
 
     @@@Ruby
     define_method("build_#{association_name}") do |*params|
@@ -78,7 +82,7 @@
       end
     end
 
-!SLIDE 
+!SLIDE smallest
 
 # embeds_many #
 
@@ -127,9 +131,8 @@
                       :inverse_of => :preferences
     end
 
-!SLIDE bullets
+!SLIDE smaller
 
-# references are similar to embeds except
+## references are similar to associations in ActiveRecord ##
 
-* references take charge of foreign keys
-* references be updated before document saved
+## implementation of references is simliar to embeds ##

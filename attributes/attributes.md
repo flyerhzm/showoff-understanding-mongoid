@@ -6,9 +6,19 @@
 
 ![Attributes](attributes.png)
 
-!SLIDE bullets
+!SLIDE
+
+## attributes is a hash ##
+
+## read_attribute gets a value from the hash ##
+
+## write_attribute sets a value to the hash ##
+
+!SLIDE bullets small
 
 # Set and Get for Conversions #
+
+## extensions for different types ##
 
 <ul class="float">
 <li>Array</li>

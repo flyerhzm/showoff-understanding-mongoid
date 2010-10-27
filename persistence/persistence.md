@@ -11,6 +11,7 @@
       :first_name => "Syd", 
       :last_name => "Vicious"
     )
+
     person = Person.create!(
       :first_name => "Emmanuel", 
       :last_name => "Zorg"
@@ -74,6 +75,8 @@
 ![Persistence](persistence.png)
 
 !SLIDE
+
+# Implementation #
 
     @@@Ruby
     def insert(options = {})
