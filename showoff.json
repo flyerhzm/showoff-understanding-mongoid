@@ -10,5 +10,6 @@
   { "section":"querying" },
   { "section":"callbacks" },
   { "section":"validations" },
-  { "section":"references" }
+  { "section":"contribute" },
+  { "section":"end" }
 ]}
