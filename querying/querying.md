@@ -91,54 +91,114 @@
 
 !SLIDE
 
-# translate #
+# Translate #
+
+!SLIDE smaller
+
+    @@@Ruby
+    Person.find(:all, :conditions => {:name => "Syd"})
+
+
+    selector: { :name => "Syd" }
+    options: {}
+
+!SLIDE smaller
+
+    @@@Ruby
+    Person.any_in(:status => ["Single", "Married"])
+
+
+    selector: {:status=>{"$in"=>["Single", "Married"]}}
+    options: {}
+
+!SLIDE smallest
+
+    @@@Ruby
+    Person.any_of({:status => "Single"}, {:preference => "Open"})
+
+    selector:{"$or"=>[{:status=>"Single"},{:preference=>"Open"}]}
+    options: {}
+
+!SLIDE smallest
+
+    @@@Ruby
+    Person.desc(:last_name).asc(:first_name)
+
+    selector: {}
+    options: {:sort=>[[:last_name, :desc], [:first_name, :desc]]}
+
+!SLIDE small
+
+    @@@Ruby
+    Person.limit(20).skip(100)
+
+    selector: {}
+    options: {:limit=>20, :skip=> 100}
+
+!SLIDE smaller
+
+    @@@Ruby
+    Person.where(:age.gt => 18, :age.lt => 30)
+
+    selector: {}
+    options: { :age => [{"$gt" => 18}, { "$lt" => 30 }] }
 
 !SLIDE
 
-Person.find(:all, :conditions => { :name => "Syd" })
+# Lazy finders #
 
-selector: { :name => "Syd" }
-options: {}
+!SLIDE center
 
-!SLIDE
+![Lazy finders1](lazy_finders1.png)
 
-Person.any_in(:status => ["Single", "Divorced", "Separated"])
+!SLIDE center
 
-selector: {:status=>{"$in"=>["Single", "Divorced", "Separated"]}}
-options: {}
+![Lazy finders2](lazy_finders2.png)
 
-!SLIDE
+!SLIDE bullets
 
-Person.any_of({:status => "Single"}, {:preference => "Open"})
+# query not be executed until #
 
-selector: {"$or"=>[{:status=>"Single"}, {:preference=>"Open"}]}
-options: {}
-
-!SLIDE
-
-Person.desc(:last_name).asc(:first_name)
-
-selector: {}
-options: {:sort=>[[:last_name, :desc], [:first_name, :desc]]}
+* each
+* first
+* last
+* count
+* ......
 
 !SLIDE
 
-Person.limit(20).skip(100)
+# Chainable scope #
 
-selector: {}
-options: {:limit=>20, :skip=> 100}
+!SLIDE smaller
 
-!SLIDE
+    @@@Ruby
+    class Person
+      include Mongoid::Document
+      field :active, :type => Boolean
+      field :count, :type => Integer
+    
+      scope :active, :where => { :active => true }
+      scope :count_gt_one, :where => { :count.gt => 1 }
+    end
 
-Person.where(:age.gt => 18, :age.lt => 30)
+!SLIDE smaller
 
-selector: {}
-options: { :age => [{"$gt" => 18}, { "$lt" => 30 }] }
+# Implementation #
 
-!SLIDE
+    @@@Ruby
+    def named_scope(name, conditions = {}, &block)
+      name = name.to_sym
+      scopes[name] = Scope.new(conditions, &block)
+      (class << self; self; end).class_eval <<-EOT
+        def #{name}(*args)
+          scope = scopes[:#{name}]
+          scope.extend(
+            criteria.fuse(scope.conditions.scoped(*args))
+          )
+        end
+      EOT
+    end
 
-# lazy finders #
+!SLIDE center
 
-!SLIDE
-
-# chainable scope #
+![Chainable Scope](chainable_scope.png)

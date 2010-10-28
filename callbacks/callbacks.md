@@ -4,21 +4,24 @@
 
 ## Inherited from ActiveModel ##
 
-!SLIDE bullets
+!SLIDE
 
-* before_create
-* before_destroy
-* before_save
-* before_update
-* before_validation
-* after_create
-* after_initialize
-* after_destroy
-* after_save
-* after_update
-* after_validation
+    @@@Ruby
+    before_create
+    before_destroy
+    before_save
+    before_update
+    before_validation
+    after_create
+    after_initialize
+    after_destroy
+    after_save
+    after_update
+    after_validation
 
 !SLIDE
+
+# Implementation #
 
     @@@Ruby
     extend ActiveModel::Callbacks
