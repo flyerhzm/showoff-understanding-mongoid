@@ -1,10 +1,10 @@
-!SLIDE
+!SLIDE small
 
 # Mongodb #
 
 ## The Best Features of Document Databases, Key-Value Stores, and RDBMSes. ##
 
-!SLIDE
+!SLIDE small
 
 # Mongoid #
 
@@ -38,4 +38,4 @@
 
 ## include Mongoid::Document means ##
 
-## You get the CRUD ability to Mongodb ##
+## you get the CRUD abilities to Mongodb ##

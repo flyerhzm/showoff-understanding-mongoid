@@ -9,7 +9,7 @@
 ![Richard Huang](richard.png)
 
 * <http://github.com/flyerhzm>
-* <http://twitter.com/flyerhzm>
+* <a href="http://twitter.com/flyerhzm">@flyerhzm</a>
 
 !SLIDE bullets
 

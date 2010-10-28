@@ -94,7 +94,7 @@
     person.phones << Phone.new(:number => "415-555-1212")
     person.phones = [ Phone.new(:number => "415-555-1212") ]
 
-!SLIDE bullets center
+!SLIDE bullets center smaller
 
 ![Many associations build](many_associations_build.png)
 

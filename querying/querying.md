@@ -116,6 +116,7 @@
     @@@Ruby
     Person.any_of({:status => "Single"}, {:preference => "Open"})
 
+
     selector:{"$or"=>[{:status=>"Single"},{:preference=>"Open"}]}
     options: {}
 
@@ -123,6 +124,7 @@
 
     @@@Ruby
     Person.desc(:last_name).asc(:first_name)
+
 
     selector: {}
     options: {:sort=>[[:last_name, :desc], [:first_name, :desc]]}
@@ -132,6 +134,7 @@
     @@@Ruby
     Person.limit(20).skip(100)
 
+
     selector: {}
     options: {:limit=>20, :skip=> 100}
 
@@ -139,6 +142,7 @@
 
     @@@Ruby
     Person.where(:age.gt => 18, :age.lt => 30)
+
 
     selector: {}
     options: { :age => [{"$gt" => 18}, { "$lt" => 30 }] }
@@ -180,6 +184,9 @@
       scope :active, :where => { :active => true }
       scope :count_gt_one, :where => { :count.gt => 1 }
     end
+
+
+    Person.active.count_gt_one
 
 !SLIDE smaller
 

@@ -17,3 +17,7 @@ ul.float li {
 .smallest {
   font-size: 60%;
 }
+pre {
+  padding: 5px 0;
+  margin-left: 0;
+}
