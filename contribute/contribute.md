@@ -40,5 +40,5 @@ Finding 100 posts with person, with eager loading         0.030000   0.010000   
 
 !SLIDE
 
-# Fork it! #
+# Fork Mongoid! #
 
