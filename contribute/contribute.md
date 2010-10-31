@@ -14,7 +14,7 @@
 
 ## mongoid-eager-loading ##
 
-* as a <a href="https://github.com/mongoid/mongoid/pull/391">pull requesti</a> originally
+* as a <a href="https://github.com/mongoid/mongoid/pull/391">pull request</a> originally
 * as a <a href="http://github.com/flyerhzm/mongoid-eager-loading">gem</a> temporarily now
 
 !SLIDE
